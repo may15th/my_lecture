@@ -17,7 +17,7 @@ const addChat = (type, value) => {
 // 1. 챗봇 서버에 요청할 URL (chatGPT API reference Chat 파트 참고)
 const OPEN_API_URL = "https://api.openai.com/v1/chat/completions"
 // 2. API 키 (발급 받은 Secret Key)
-const API_KEY = "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"
+const API_KEY = "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"
 
 // 필요한 헤더 정보
 const headers = {
@@ -38,7 +38,6 @@ const chatReceive = (userMsg) => {
     },
     // 이전에 응답한 내용을 아래와 같이 넣어주지 않으면 챗팅 맥락이 연결되지 않음
     // 1. 이전 정보를 메세지에 추가
-    // 주석 해제 하려는 영역 드래그 후, `ctrl + /`
     {
       'role': 'system',  
       'content': oldMsg
@@ -46,8 +45,7 @@ const chatReceive = (userMsg) => {
   ]
 
   // chatGPT API 서버에 요청을 보내는 부분
-  axios(
-    {
+  axios({
     // 요청에 대한 설정 부분
     'method': 'post',           // POST 요청
     'url': OPEN_API_URL,        // 요청하는 URL 
@@ -56,8 +54,7 @@ const chatReceive = (userMsg) => {
       'model': 'gpt-3.5-turbo',   // gpt 모델 정보 설정
       'messages': messages,       // 사용자가 입력한 내용을 담은 메세지 설정
     }
-  }
-  )
+  })
   //  chatGPT API 서버에서 정상적으로 응답이 도달했을 때 실행되는 부분
   .then( res => {
     // 응답 데이터 확인 (크롬 개발자 도구 콘솔창)

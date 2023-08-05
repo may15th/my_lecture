@@ -1,25 +1,12 @@
-[TOC]
-# 대제목 1
-## 중제목 2
-### 소제목 3
-
-1. 순서 있는 리스트
-2. 두번째 요소
-    1. 두번째의 자식 요소
-    2. 두번쨰의 두번쨰 자식
-- 순서가 없는 리스트
-    1. 순서가 없는 리스트의 순서가 있는 자식 리스트
-
-```python
-print('hello')
-if True:
-    print('hello')
+### git ignore 파일 관련
+항상 vs코드에서 
+```bash
+code .gitignore
 ```
-[naver](https://www.naver.com)
-![이미지](https://picsum.photos/200/300)
+로 코드 작성해야 함. 최사위 파일에서 작성할 것
 
-**굵게**
-*기울임*
-~~취소선~~
-
----
+git add commit 이후
+git push 
+git push origin master
+git push lab master
+git push 에 뭐가 저장돼 있는지 확인한 이후에 진행.
