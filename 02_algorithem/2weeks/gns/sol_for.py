@@ -20,31 +20,18 @@ sys.stdin = open('input.txt')
 T = int(input())
 for _ in range(10):
     N, length = map(str, input().split())
+    # words는 N약 7000개 이상
     words = map(str, input().split())
+    # numbers랑 리스트 비교해서 값 존재하면 ans에 append
     numbers = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
+    # 자주 나오는 문제 풀이 형태 - 빈 리스트 만들고 거기에 값 추가하는 형식
     ans = []
     for num in numbers:
-        if num in words:
-            ans.append(num)
+        for j in words:
+            if j == num:
+                ans.append(num)
 
     print(N)
     print(ans)
 
 
-# 딕셔너리 이용한 풀이
-T = int(input())
-word_num = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
-a_dict = {}
-
-for i in range(len(word_num)):
-    a_dict[word_num[i]] = i
-for order in range(1, T + 1):
-    order2, N = input().split()
-    N = int(N)
-    array = list(input().split())
-
-    new_array = []
-    for i in range(N):
-        new_array.append(a_dict.get(array[i]))
-
-    new_array
