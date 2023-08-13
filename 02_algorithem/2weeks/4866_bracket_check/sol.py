@@ -36,30 +36,34 @@
 #             elif stack[-1] == '(':
 #                 if i != ')':
 #                     result = 0
+#                     break
 #                 else:
 #                     stack.pop()
 #
 #             elif stack[-1] == '{':
 #                 if i != '}':
 #                     result = 0
+#                     break
 #                 else:
 #                     stack.pop()
 #
-#             elif stack[-1] == '[':
-#                 if i != ']':
-#                     result = 0
-#                 else:
-#                     stack.pop()
-#
-#     print(stack)
 #     if stack != []:
 #         result = 0
 #
 #     print(f'#{tc} {result}')
-#
 
-stack = []
-print(bool(stack))
-stack = [1]
-print(bool(stack))
-if stack and stack >3""
+
+
+
+
+
+
+
+#
+# stack = []
+# print(bool(stack))
+# stack = [1]
+# print(bool(stack))
+# if stack and stack >3""
+
+
