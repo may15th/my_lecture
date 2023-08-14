@@ -31,8 +31,8 @@
     #
     # print(f'{tc} {max_v}')
 
-import sys
-sys.stdin = open('input.txt')
+# import sys
+# sys.stdin = open('input.txt')
 
 T = int(input())
 for tc in range(1, T+1):
@@ -44,15 +44,13 @@ for tc in range(1, T+1):
         dj = [0, 1, 0, -1, 0]
         for j in range(M):
             sum = 0
-            max_v = 0       # sum, max_v 초기화 위치를 어떻게 할 것인가.
+            max_v = 0
             for dir in range(5):
                 ni = i+di[dir]
                 nj = j+dj[dir]
-                if 0 <= ni < (N-1) and 0 <= nj < (M-1):
+                if 0 <= ni < N and 0 <= nj < M:
                     sum += arr[ni][nj]
-        print(sum)
+                if max_v < sum:
+                    max_v = sum
 
-            # if max_v < sum:
-            #     max_v = sum
-
-    # print(f'#{tc} {max_v}')
+    print(f'#{tc} {max_v}')
