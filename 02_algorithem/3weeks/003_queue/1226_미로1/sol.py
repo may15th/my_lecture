@@ -38,14 +38,14 @@ def find_start(N):
                 return i, j
 
 def bfs(sti, stj, N):
-    visited = [[0]*N for _ in range(N)]
-    q = []
+    visited = [[0]*N for _ in range(N)] # visited 0으로 행렬 초기화
+    q = []  #q 빈리스트 초기화
     q.append((sti, stj))    # 튜플로 기록할 거라서 이렇게 한 것.
-    visited[sti][stj] = 1
+    visited[sti][stj] = 1       # visited 1 표시해 줌.
 
-    while q:
-        i, j  = q.pop(0)
-        if arr[i][j] == 3:
+    while q:        # q 빈 리스트 될때까지
+        i, j = q.pop(0) # q에서 값꺼내고
+        if arr[i][j] == 3:  # arr[i][j] = 3이면 도착이니까
             return 1    #bfs함수 마지막 보면 return기본값은 0인데, 도착점인 3인 지점 갈 경우 1 리턴
 
         for di, dj in [[0, 1], [1, 0], [0, -1], [-1, 0]]:       # 이 리스트 컴프리헨션 구문 기억!
