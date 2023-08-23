@@ -1,3 +1,10 @@
+'''
+이거 그냥 while문으로 조건 주는 게 훨씬 좋을 것 같은데;;;
+
+
+'''
+
+
 T= int(input())
 for tc in range(1, T+1):
     N, K = map(int, input().split())
