@@ -14,7 +14,7 @@ for tc in range(1, T + 1):
         for j in range(N):
             cnt = 0
             # (행 시작이 0 or arr[i-1][j]==0) and ( 행 끝이 n or arr[i+K][j] ==0)
-            if i == 0 or arr[i-1][j] == 0:
+            if (0<=i<=N-K) and arr[i-1][j]
                 for r in range(i, i+K):
                     if arr[r][j] == 1:
                         cnt += 1
