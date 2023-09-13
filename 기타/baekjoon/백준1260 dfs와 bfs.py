@@ -1,8 +1,3 @@
-
-
-
-
-
 N,M,V = map(int, input())
 adj = [[] for _ in range(N+1)]
 
