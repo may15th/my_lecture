@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>NEW</h1>
+  <form action="??" method="GET"></form>
+  <div>
+    <label for="title">제목: </label>
+    {% comment %} 제목이라 이름붙인 label클릭하면 title커서 이동 {% endcomment %}
+    <input type="text" id="title" name="title">
+  </div>
+  <div>
+    <label for="content">내용 : </label>
+    <textarea name="" id="content" cols="30" rows="10"></textarea>
+  </div>
+  <input type="submit">
+  {% comment %} 서버로 사용자 요청을 보내는 대표적인 tag는 form tag {% endcomment %}
+  {% comment %} 사용자가 제목, 내용 쓸 것 '제출' 가야할 위치가 없어. 쟝고에서 그 url을 만들어야. {% endcomment %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>INDEX</h1>
+  {% for article in articles %}
+  <p>글 번호 : {{article.pk}}</p>
+  <a href="{% url "articles:detail" article.pk %}">
+    <p>글 제목 : {{article.title}}</p>
+</a>
+  <p>글 내용 : {{article.content}}</p>
+  <hr>
+  {% endfor %}
+  {% comment %} 장고의 반복 문 language for tag {% endcomment %}
+  {% comment %} create 조작 없기 때문에 아무 변화 없다고 함... {% endcomment %}
+
+</body>
+</html>
+
+
+{% comment %}  no reverse match url만 찾아디버깅 하면됌. {% endcomment %}
