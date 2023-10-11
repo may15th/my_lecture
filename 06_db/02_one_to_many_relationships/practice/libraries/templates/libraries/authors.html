@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author List</title>
+</head>
+<body>
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+            {% comment %}  이부분이 제일 헷갈리네.... 이 문법을 모르니깐 왜 authors/1/ 2/로 이동하는지 모르겠음. {% endcomment %}
+            <li><a href="{% url "libraries:detail" author.pk %}">{{ author.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% comment %} render함수로 authors 테이블을 넘겨주었기 떄문에 for문 같은 DTL사용가능한 것. {% endcomment %}
