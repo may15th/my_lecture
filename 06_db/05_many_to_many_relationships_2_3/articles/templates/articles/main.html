@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>메인 페이지</h1>
+  <hr>
+  {% for article in artocles %}
+  <a href="{% url "articles:detail" article.pk%}"></a>
+  <p>작성자: {{ article.user.username }} 게시글</p>
+  <p>제목: {{ article.title }} </p>
+  
+  <form action="" method ="POST">
+    {% csrf_token %}
+    {% comment %} 조건분기 {% endcomment %}
+    {% if request.user in article.like_users.all %}
+     <input type="submit" value = "🥦">
+    {% else %}
+      <input type="submit" value = "🍓">
+    {% endif %}
+
+  </form>
+  {% endfor %}
+{% endblock content %}
