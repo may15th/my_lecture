@@ -37,3 +37,23 @@ POST 생성, PUT 수정, DELETE 삭제
 
 postman 사용법은 runserver하고 url 그대로 옮겨서 확인하는 것.
 그것뿐.
+
+postman POST할 경우 POST창에서
+기본은 Params Authorization ... 중\
+Body, form-data선택
+키-밸류 형태
+타이틀, content 만 넣어주면 됨
+key title, contetn 넣어주고, values는 쓰고 싶은 제목, 내용 적기
+
+create = post
+read = get
+update = put
+delete = delete
+
+import requests
+from pprint import pprint
+
+#json을 python 타입으로 변환
+response = requests.get(http://xxxxxx)
+
+pprint(result[0].get('title'))

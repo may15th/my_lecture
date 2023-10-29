@@ -7,8 +7,6 @@
 
 
 def bfs(s, V):               # 시작정점 s, 마지막 정점 V
-    visited = [0] * (V+1)   # visited 생성 # 마지막 정점 번호 인덱스까지 만들기 위해 +1 해줌.
-    q = []                  # 큐 생성
     q.append(s)             # 시작 점 인큐
     visited[s] = 1          # 시작점 방문 표시     위 4단계가 기본작업
     while q:                # 큐에 정점이 남아있으면 front != rear 
@@ -28,11 +26,19 @@ V, E = map(int, input().split())        # 1번부터 V번 정점, E개의 간선
 arr = list(map(int, input().split()))
 # 인접 리스트 ================================
 adj_l = [[] for _ in range(V+1)]
+visited = [0] * (V + 1)  # visited 생성 # 마지막 정점 번호 인덱스까지 만들기 위해 +1 해줌.
+q = []
 for i in range(E):
     v1, v2 = arr[i*2], arr[i*2+1]
     adj_l[v1].append(v2)
     adj_l[v2].append(v1)
 
+
+
+
 bfs(1, 7)
 
 # 오류 뜬다 ㅋㅋㅋㅋㅋ GPT도 이상없는 코드라는데...
+
+
+

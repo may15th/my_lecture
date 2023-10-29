@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 특정 경로로 요청이 들어왔을떄 include함수 내부에 작성한 urls모듈을 참고하여 코드가 실행되도록 작성한다.
-    # 그냥 가독성이 원인.
+    # 특정 경로로 요청이 들어왔을때, 이후 경로에 대해서는 include 함수 내부에 작성한
+    # urls 모듈을 참고하여 코드가 실행되도록 작성한다.
     path('libraries/', include('libraries.urls')),
 ]
