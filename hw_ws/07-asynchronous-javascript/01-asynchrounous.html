@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const slowRequest = function (callBack) {
+      console.log('1. 오래 걸리는 작업 시작...')
+      // 첫인자 콜백함수 받고, 바로 호출하는 게 아니라, 두 번째 인자 시간 지난이후에 시작
+      setTimeout(function() {
+        callBack()
+      }, 3000)
+    }
+
+    const myCallBack = function () {
+      console.log('2. 콜백함수 실행됨')
+    }
+
+    // 여기가 실행
+    slowRequest(myCallBack)
+
+    // 1,2가끝난후 실행
+    // 3은 settimeout끝난 후에 실행되야 하는데, 3이 2보다 먼저 나옴... 왜 그렇지?
+    // callBack함수가 뭐냐.
+    // callBack함수의 특징 - 처리가 나중에 돼서 back하게 된 것.
+    // js가 callBack함수 사용하는 이유도, 병렬적으로 비동기적 많이 작업하기 위해서.
+    console.log('3. 다른 작업 실행')
+  </script>
+</body>
+
+</html>
