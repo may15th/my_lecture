@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const sub = function (num1,num2) {
+      return num1 -num2
+    }
+    console.log(sub(2,1))
+
+    const greeting = function (name = 'yuhan') {
+      return `hi ${name}`
+    }
+
+    console.log(greeting())
+
+    const myfunc = function ( p1,p2, ...ps) {
+      return [p1,p2, ps]
+    }
+    console.log(myfunc(1,2,3,4,5))
+    console.log(myfunc(1,2))
+
+    function myfunc2(x,y,z) {
+      return x+y+z
+    }
+
+    let numbers = [1,2,3]
+
+    console.log(myfunc2(...numbers))
+
+    const arrow = name => `hello, ${name}`
+
+    console.log(arrow('유한'))
+
+    const user = {
+      name:'yuhan',
+      'key with space': true,
+      greeting: function () {
+        return 'hello'
+      }
+    }
+
+    console.log(user,name)
+    console.log(user.greeting())
+    console.log('greeting' in user)
+
+    const person = {
+      name:'yuhan',
+      greeting: function() {
+        return `hello ${this.name}`
+      }
+    }
+
+    console.log(person.greeting())
+
+    const myobj2 = {
+      myfunc3() {
+        return 'hello'
+      }
+    }
+    
+    // console.log(myobj2.myfunc3())
+
+    // const product = prompt('물건 이름')
+    // const prefix = 'yu'
+    // const suffix = 'han'
+
+    // const bag = {
+    //   [product]: 5,
+    //   [prefix+suffix]: 'value'
+
+    // }
+    // console.log(bag)
+
+    const userinfo = {
+      firstname: 'yuhan',
+      userid: 'yuhan123',
+      email: 'uhan123@gmail.com'
+
+    }
+
+    
+    const { firstname,userid,email  } = userinfo
+
+    
+
+    console.log(firstname,userid,email)
+    
+    function printinfo({name, age, city}) {
+      console.log(`이름: ${name}, 나이: ${age}, 도시: ${city}`)
+    }
+
+    const person2 = {
+      name: 'bob',
+      age: 35,
+      city: 'london',
+    }
+
+    printinfo(person2)
+
+    const obj = {b:2,c:3,d:4}
+    const newobj = {a:1, ...obj,  e:5}
+
+    console.log(newobj)
+
+    const profile = {
+      name: 'yuhan',
+      age: 30,
+    }
+
+    console.log(Object.keys(profile))
+    console.log(Object.values(profile))
+
+    const user2 = {
+      name: 'yuhan',
+      greeting: function () {
+        return 'hello'
+      }
+    }
+
+    console.log(user.address && user.adderess.street)
+
+    const jsObject = {
+      coffeee: 'Americano',
+      iceCream: 'Cooke and cream',
+    }
+
+    const objToJson = JSON.stringify(jsObject)
+    console.log(objToJson)
+    console.log(typeof objToJson)
+
+    // json -> object
+    const jsonToObj = JSON.parse(objToJson)
+    console.log(jsonToObj)
+    console.log(typeof jsonToObj)
+
+    const member = {
+      name: 'yuhan',
+      age: 22,
+      sid: 20223156,
+    }
+
+    const member2 = {
+      name: 'bella',
+      age: 29,
+      sid: 203231025,
+    }
+
+    function Member(name, age, sid) {
+      this.name = name
+      this.age = age
+      this.sid = sid
+    }
+
+    const member3 = new Member('mella', 21, 20231024)
+
+    console.log(member3)
+    console.log(member3.name)
+
+    const names = ['alice', 'bella', 'cathy']
+
+    console.log(names[0])
+    console.log(names[1])
+    console.log(names[2])
+
+    console.log(names.pop())
+    console.log(names)
+
+    names.push('dan')
+    console.log(names)
+
+    console.log(names.shift())
+    console.log(names)
+
+    console.log(names.unshift('eric'))
+    console.log(names)
+
+    const names3 = ['고라파덕', '야돈', '루주라']
+
+    names3.forEach(function (item, index, array) {
+      console.log(`${item} / ${index} / ${array}`)
+
+    })
+    // names.forEach((item, index, array) => {
+    //   console.log(`${item} / ${index} / ${array}`)
+    // })
+
+    const numbers1 = [1,2,3,]
+
+    numbers1.forEach(function (num) {
+      console.log(num**2)
+    })
+
+    const numbers2 = [1,2,3,]
+
+    const callBackFunction = function (num) {
+      console.log(num ** 2)
+
+    }
+    
+    numbers2.forEach(callBackFunction)
+
+    const names4 = ['나이키', '아디다스', '퓨마']
+
+    const result1 = names4.map(function (name) {
+      return name.length
+    })
+
+    const result2 = names4.map((name) => {
+      return name.length
+    })
+
+    console.log(result1)
+    console.log(result2)
+
+    const numbers3 = [1,2,3,]
+
+    const doubleNumber = numbers.map((number) => {
+      return number * 2
+    })
+
+    console.log(doubleNumber)
+  </script>
+</body>
+</html>
