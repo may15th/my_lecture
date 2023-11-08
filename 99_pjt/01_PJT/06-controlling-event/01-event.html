@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">버튼</button>
+  <button id="btn2">버튼123</button>
+  <script>
+    // 1. 버튼 선택
+    const btn = document.querySelector('#btn')
+
+    // 2. 콜백함수 작성
+    const clickCallbackFunc = function (event) {
+      console.log(event)
+      console.log(event.target)
+      console.log(event.currentTarget)
+      console.log(this)
+    }
+
+    // 3. 버튼에 이벤트 핸들러를 부착
+    // 클릭은 type이고 이건 문자열로 정해져 있음 법률처럼, click발생시 실행할 함수=콜백함수
+    btn.addEventListener('click', clickCallbackFunc)
+  
+    // addEventListener은 DOM객체를 강제로 this로 만듦.
+
+    // 클래스 객체는 포인터 객체 만들어짐. 마우스객체의 하위객체  
+
+
+    const btn2 = document.querySelector('#btn2')
+  
+    //addEventListener는 무조건 event를 매개변수 인자로 받는데, 이름은 event일 필요는 없다.
+    const clickCallbackFunc2 = function(event) {
+      console.log(event)
+      console.log(event.target)
+      console.log(event.currentTarget)
+      console.log(this)
+    }
+    btn.addEventListener('click', clickCallbackFunc2)
+  </script>
+</body>
+
+</html>
+

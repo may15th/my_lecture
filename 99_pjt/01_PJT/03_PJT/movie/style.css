@@ -1,0 +1,27 @@
+.footer {
+  height: 35px;
+  background-color: lightgrey;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-fluid {
+  background-color: rgba(0, 0, 0, 0.884);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: lightgray;
+
+}
+.body {
+  margin: 0;
+}
+
+
+/*  flexbox 행, 열을 자유롭게 조절할 수 있는 방법... */
+/*  */

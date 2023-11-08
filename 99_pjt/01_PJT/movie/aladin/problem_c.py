@@ -5,7 +5,24 @@ from pprint import pprint
 def books_info(books, categories):
     # 여기에 코드를 작성합니다.  
     pass
-        
+    
+    categoryNamelist = []
+    category_id_list = books.get('categoryId')
+    for category in categories:
+            if category.get('id') in category_id_list:
+                categoryNamelist.append(category.get('name'))
+                
+    new_book={
+        'id' : books.get('id'),
+        'title' : books.get('title'),
+        'author' : books.get('author'),
+        'priceSales' : books.get('priceSales'),
+        'description' : books.get('description'),
+        'cover' : books.get('cover'),
+        'categoryName' : categoryNamelist
+    }
+
+    return new_book   
 
 
 
